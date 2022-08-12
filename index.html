@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number!!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <div class="head">
+            <h1>Guess the Number</h1>
+            <p id="game-rule">choose a number between 1 to 100</p>
+        </div>
+        <div class="main_section">
+            <div class="user">
+                <input type="number" id="userNo" placeholder="Enter any number">
+                <button id="guessBtn" onclick="guessNumber()">Check</button>
+                <p id="displayText" style="margin:2rem 0 0 5rem;"></p>
+                <h3 id="scoreText" style="margin:2rem 0 0 7rem;"></h3>
+            </div>
+        </div>
+        <script>
+            let score = 10;
+            let secretCode = Math.trunc(Math.random()*100)+1;
+            function guessNumber(){
+                
+               let getNo = document.getElementById("userNo").value;
+
+               if(score <= 0)
+                {
+                    document.getElementById("displayText").innerText = 'ThankYou Please try again';
+                    document.getElementById("scoreText").innerText = `Score: 0`;
+                }
+               
+                else if(getNo === ""){
+                  
+                   document.getElementById("displayText").innerText = "Please Enter the Number";
+                   document.getElementById("scoreText").innerText = `Score:${score}`;
+
+                }
+                else if(getNo === secretCode)
+                {
+                    score += 1;
+                    document.getElementById("displayText").innerText = `Congratulations! Your Guess is Correct..`;
+                    document.getElementById("scoreText").innerText = `Score:${score}`;
+                }
+                else if(getNo <= secretCode )
+                {
+                    score -= 1;
+                    document.getElementById("displayText").innerText = 'Your Guess is too Low';
+                    document.getElementById("scoreText").innerText = `Score:${score}`;
+                }
+                else if(getNo > 100){
+
+                    score -= 1;
+                    document.getElementById("displayText").innerText = 'Your Guess Out Of Specified Range';
+                    document.getElementById("scoreText").innerText = `Score:${score}`;
+                }
+                else if(getNo >= secretCode)
+                {
+                    score -= 1;
+                    document.getElementById("displayText").innerText = "Your Guess too high";
+                    document.getElementById("scoreText").innerText = `Score:${score}`;
+                }
+                
+            }
+        </script>      
+    </main> 
+</body>
+</html>
+
+

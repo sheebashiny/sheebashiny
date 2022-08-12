@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&family=Silkscreen&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background: linear-gradient(to right, rgba(203, 192, 203, 0.596), teal);
+    font-family: 'Poppins', sans-serif;
+    
+}
+.head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.head h1{
+    font-family: 'Silkscreen', cursive;
+    text-align: center;
+    margin: 5rem;
+}
+.head p{
+    font-size: 2rem;
+    color: rgba(114, 90, 121, 0.619);
+    font-weight: bold;
+}
+.main_section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+input{
+    height: 3rem;
+    margin: 3rem;
+    width: 15rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    border: none;
+}
+input:focus,#userNo{
+    text-align: center;
+    background-color: rgba(196, 184, 200, 0.552);
+}
+.main_section button{
+    display: block;
+    width: 10rem;
+    height: 3rem;
+    border: 2px solid grey;
+    background-color: rgba(128, 128, 128, 0.498);
+    margin-left: 5rem;
+    border: none;
+    border-radius: 10px;
+    font-size: large;
+}
+    
+    
+
